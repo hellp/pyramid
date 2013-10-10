@@ -145,8 +145,12 @@ def negotiate_locale_name(request):
 
 def get_locale_name(request):
     """ Return the :term:`locale name` associated with the current
-    request.  Deprecated in favor of using request.locale_name directly as of
-    Pyramid 1.5."""
+    request.
+
+    .. deprecated:: 1.5
+       Use ``request.locale_name`` directly.
+
+    """
     return request.locale_name
 
 def make_localizer(current_locale_name, translation_directories):
@@ -194,8 +198,12 @@ def make_localizer(current_locale_name, translation_directories):
 
 def get_localizer(request):
     """ Retrieve a :class:`pyramid.i18n.Localizer` object
-    corresponding to the current request's locale name.  Deprecated in favor
-    of using the ``request.localizer`` attribute directly as of Pyramid 1.5"""
+    corresponding to the current request's locale name.
+
+    .. deprecated:: 1.5
+       Use ``request.localizer`` directly.
+
+    """
     return request.localizer
 
 class Translations(gettext.GNUTranslations, object):
